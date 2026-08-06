@@ -1,0 +1,24 @@
+[data-theme="Mode 1"] {
+  /* color */
+  --colors-black: #000000;
+  --colors-white: #ffffff;
+  --colors-gray-200: #dadada;
+  --colors-gray-50: #fafafa;
+  --colors-gray-700: #837d88;
+  --colors-gray-950: #2c2830;
+  --colors-olive-400: #3d3e14;
+  --colors-purple-500: #52313a;
+  --colors-yellow-500: #af7b01;
+  --colors-yellow-950: #db9f00;
+  /* number */
+  --spacing-0: 0px;
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-700: 56px;
+  --spacing-800: 64px;
+  --spacing-1000: 80px;
+}
