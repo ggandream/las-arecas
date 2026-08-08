@@ -1,4 +1,4 @@
-[data-theme="Mode 1"] {
+:root {
   /* color */
   --colors-black: #000000;
   --colors-white: #ffffff;
@@ -21,4 +21,245 @@
   --spacing-700: 56px;
   --spacing-800: 64px;
   --spacing-1000: 80px;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100dvh;
+}
+
+header {
+  display: flex;
+  height: 80px;
+  padding: var(--spacing-0, 0);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-0, 0);
+  align-self: stretch;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+header + section {
+  width: 100%;
+  height: fit-content;
+  background: var(--colors-yellow-950, #db9f00);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header + section > div {
+  display: flex;
+  width: 90%;
+  height: 500px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-200);
+}
+
+h1 {
+  color: var(--colors-white, #fff);
+  text-align: center;
+
+  /* Text Preset 3 - DM Serif  Display Regular - 48px - 100% Line Height - -0.5px Line Spacing */
+  font-family: "DM Serif Display";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 48px */
+  letter-spacing: -0.5px;
+}
+
+header + section p {
+  color: var(--colors-white, #fff);
+  text-align: center;
+
+  /* Text Preset 7 - Karla Regular - 16px - 162.5% Line Height - 0px Line Spacing */
+  font-family: Karla;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 165%; /* 26.4px */
+}
+
+section a {
+  display: flex;
+  width: 146px;
+  height: 40px;
+  padding: var(--spacing-0, 0);
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-0, 0);
+  border: 1.5px solid var(--colors-white, #fff);
+}
+
+a {
+  text-decoration: none;
+}
+a span {
+  color: var(--colors-white, #fff);
+  text-align: center;
+
+  /* Text Preset 8 - Karla Bold - 13px - 115% Line Height - 1.5px Line Spacing */
+  font-family: Karla;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 115%; /* 14.95px */
+  letter-spacing: 1.5px;
+}
+
+section:nth-child(2 of section) {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-500);
+  margin-bottom: 80px;
+}
+
+section article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-200);
+  align-self: stretch;
+}
+
+article h3 {
+  color: var(--colors-gray-950, #2c2830);
+  text-align: center;
+
+  /* Text Preset 5 - DM Serif  Display Regular - 28px - 135% Line Height - -0.5px Line Spacing */
+  font-family: "DM Serif Display";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135%; /* 37.8px */
+  letter-spacing: -0.5px;
+}
+
+article p {
+  color: var(--colors-gray-700, #837d88);
+  text-align: center;
+
+  /* Text Preset 7 - Karla Regular - 16px - 162.5% Line Height - 0px Line Spacing */
+  font-family: Karla;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 165%; /* 26.4px */
+}
+
+article img {
+  display: flex;
+  width: 86px;
+  height: 86px;
+  padding: var(--spacing-0, 0);
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-0, 0);
+
+  border-radius: 43px;
+  background: var(--colors-yellow-500, #af7b01);
+}
+
+section > div {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  align-items: center;
+}
+
+div:nth-of-type(3) > div {
+  background-color: var(--colors-yellow-950);
+
+  display: flex;
+  width: 100%;
+  height: 344px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-500, 40px);
+}
+
+div:nth-of-type(2) h2 {
+  color: var(--colors-white, #fff);
+  text-align: center;
+  margin: 0;
+
+  /* Text Preset 4 - DM Serif  Display Regular - 40px - 100% Line Height - -0.5px Line Spacing */
+  font-family: "DM Serif Display";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 40px */
+  letter-spacing: -0.5px;
+}
+
+div:nth-of-type(2) div {
+  background-color: var(--colors-gray-50);
+  width: 100%;
+
+  display: flex;
+  padding: var(--space-xs, 12px) var(--space-xxs, 8px) var(--space-xs, 12px)
+    var(--spacing-200);
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+details {
+  display: flex;
+  padding: var(--spacing-200) var(--space-l, 32px) var(--spacing-200) 0;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  width: 100%;
+}
+
+summary {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+details div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-200, 16px);
+  align-self: stretch;
+}
+
+details p {
+  color: var(--colors-gray-700, #837d88);
+
+  /* Text Preset 7 - Karla Regular - 16px - 162.5% Line Height - 0px Line Spacing */
+  font-family: Karla;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 165%; /* 26.4px */
+}
+
+details img {
+  width: 100%;
+}
+
+footer {
+  background: #fafafa;
+  width: 100%;
 }
