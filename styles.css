@@ -49,18 +49,77 @@ header {
   height: 80px;
   padding: var(--spacing-0, 0);
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: var(--spacing-0, 0);
-  align-self: stretch;
+  position: relative;
 }
 
-nav {
+nav:first-of-type {
   display: flex;
-  width: 100%;
+  width: 90%;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  top: 22px;
+  color: #fff;
 }
+
+nav:last-of-type {
+  width: 100%;
+  height: calc(100dvh - 80px);
+  background: #2c2830;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  top: 80px;
+  overflow: hidden;
+}
+
+header ul {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-300);
+  list-style: none;
+  padding: 0;
+  text-transform: uppercase;
+  margin: 50px 0;
+}
+
+li {
+  width: 100%;
+  text-align: center;
+}
+
+header li a {
+  width: 100%;
+  text-decoration: none;
+  color: var(--colors-white);
+
+  /* Text Preset 6 - Karla Bold - 20px - 200% Line Height - 1.5px Line Spacing */
+  font-family: Karla;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 200%;
+  letter-spacing: 1.5px;
+
+  border: 1.5px solid transparent;
+}
+
+header li:last-of-type > a:last-of-type {
+  border: 1.5px solid var(--colors-white);
+  height: 56px;
+}
+
+@media (hover: hover) {
+  header li a:hover {
+    background-color: var(--colors-gray-700);
+  }
+}
+
 header + section {
   width: 100%;
   height: fit-content;
@@ -105,7 +164,16 @@ header + section p {
   line-height: 165%; /* 26.4px */
 }
 
-a {
+nav:first-child img {
+  height: 30px;
+}
+nav:first-child button {
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 0;
+}
+
+section a {
   display: flex;
   width: 146px;
   height: 40px;
@@ -289,10 +357,6 @@ footer {
   width: 100%;
 }
 
-.hidden {
-  display: none;
-}
-
 div:last-child h2 {
   color: var(--colors-white, #fff);
   text-align: center;
@@ -308,4 +372,13 @@ div:last-child h2 {
 
 section > div:last-of-type {
   background-color: var(--colors-yellow-950);
+}
+
+.hidden {
+  display: none;
+}
+
+nav[data-show="false"] {
+  height: 0;
+  opacity: 0;
 }
