@@ -245,7 +245,7 @@ section:nth-child(2 of section) > div:first-of-type {
   gap: var(--spacing-1000, 80px);
 }
 
-section:nth-child(2 of section) > div > div {
+section:nth-child(2 of section) > div:first-of-type > div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -306,40 +306,24 @@ picture > img {
   aspect-ratio: 16/9;
 }
 
-div:nth-of-type(2) > div {
+/* ACCORDION */
+section:last-child > div:nth-child(3) {
   display: flex;
-  width: 76%;
-  height: 344px;
+  width: 87%;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-500, 40px);
+  align-items: flex-start;
+  gap: var(--spacing-200);
 }
 
-div:nth-of-type(2) h2 {
-  color: var(--colors-white, #fff);
-  text-align: center;
-  margin: 0;
-
-  /* Text Preset 4 - DM Serif  Display Regular - 40px - 100% Line Height - -0.5px Line Spacing */
-  font-family: "DM Serif Display";
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 100%; /* 40px */
-  letter-spacing: -0.5px;
-}
-
-section div:nth-of-type(2) > div {
-  background-color: var(--colors-gray-50);
-  width: 100%;
-
+div > div:has(details) {
   display: flex;
   padding: var(--space-xs, 12px) var(--space-xxs, 8px) var(--space-xs, 12px)
     var(--spacing-200);
   flex-direction: column;
   align-items: flex-start;
-  align-self: stretch;
+
+  width: 100%;
+  background: var(--colors-gray-50);
 }
 
 details {
