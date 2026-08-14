@@ -56,7 +56,7 @@ header {
 
 nav:first-of-type {
   display: flex;
-  width: 90%;
+  width: 87%;
   justify-content: space-between;
   align-items: center;
   position: absolute;
@@ -78,7 +78,7 @@ nav:last-of-type {
 
 header ul {
   display: flex;
-  width: 90%;
+  width: 87%;
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-300);
@@ -120,28 +120,41 @@ header li:last-of-type > a:last-of-type {
   }
 }
 
-header + section {
+section:first-of-type {
+  overflow: hidden;
+  position: relative;
+  height: 868px;
+
   width: 100%;
-  height: fit-content;
+
   background: var(--colors-yellow-950, #db9f00);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
 }
-header + section > div {
+
+section:first-of-type article {
   display: flex;
-  width: 90%;
-  height: 500px;
+  width: 87%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-200);
+  margin-top: 92px;
 }
 
+section:first-of-type div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-400);
+  align-self: stretch;
+}
 h1 {
   color: var(--colors-white, #fff);
   text-align: center;
+  margin: 0;
 
   /* Text Preset 3 - DM Serif  Display Regular - 48px - 100% Line Height - -0.5px Line Spacing */
   font-family: "DM Serif Display";
@@ -152,9 +165,23 @@ h1 {
   letter-spacing: -0.5px;
 }
 
-header + section p {
+h2 {
+  color: var(--colors-gray-950);
+  text-align: center;
+
+  /* Text Preset 3 - DM Serif  Display Regular - 48px - 100% Line Height - -0.5px Line Spacing */
+  font-family: "DM Serif Display";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 48px */
+  letter-spacing: -0.5px;
+  margin: 40px 0 0;
+}
+section:first-of-type p {
   color: var(--colors-white, #fff);
   text-align: center;
+  margin: 0;
 
   /* Text Preset 7 - Karla Regular - 16px - 162.5% Line Height - 0px Line Spacing */
   font-family: Karla;
@@ -173,7 +200,7 @@ nav:first-child button {
   padding: 0;
 }
 
-section a {
+main a {
   display: flex;
   width: 146px;
   height: 40px;
@@ -187,6 +214,7 @@ section a {
 a {
   text-decoration: none;
 }
+
 a span {
   color: var(--colors-white, #fff);
   text-align: center;
@@ -206,15 +234,30 @@ section:nth-child(2 of section) {
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-500);
-  margin-bottom: 80px;
+  margin: 140px 0;
+  position: relative;
 }
 
-section article {
+section:nth-child(2 of section) > div:first-of-type {
+  display: flex;
+  width: 87%;
+  flex-direction: column;
+  gap: var(--spacing-1000, 80px);
+}
+
+section:nth-child(2 of section) > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-700);
+  align-self: stretch;
+}
+
+article {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-200);
-  align-self: stretch;
 }
 
 article h3 {
@@ -255,15 +298,15 @@ article img {
   background: var(--colors-yellow-500, #af7b01);
 }
 
-section > div {
-  display: flex;
-  width: 90%;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-200);
+picture > img {
+  width: auto;
+  height: 368px;
+  object-fit: cover;
+  object-position: 86px 0;
+  aspect-ratio: 16/9;
 }
 
-div:nth-of-type(3) > div {
+div:nth-of-type(2) > div {
   display: flex;
   width: 76%;
   height: 344px;
@@ -361,9 +404,9 @@ footer {
   align-items: center;
 }
 
-footer > div {
+footer section {
   display: flex;
-  width: 90%;
+  width: 87%;
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-400, 32px);
@@ -448,7 +491,7 @@ div:last-child h2 {
   letter-spacing: -0.5px;
 }
 
-section > div:last-of-type {
+main section > div:last-of-type {
   background-color: var(--colors-yellow-950);
 }
 
@@ -459,4 +502,18 @@ section > div:last-of-type {
 nav[data-show="false"] {
   height: 0;
   opacity: 0;
+}
+
+.waves-1 {
+  position: absolute;
+  top: 368px;
+  left: 0;
+  color: var(--colors-yellow-500);
+}
+
+.waves-2 {
+  position: absolute;
+  top: -296px;
+  right: 0;
+  color: var(--colors-purple-500);
 }
