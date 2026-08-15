@@ -74,6 +74,7 @@ nav:last-of-type {
   position: absolute;
   top: 80px;
   overflow: hidden;
+  z-index: 5;
 }
 
 header ul {
@@ -120,7 +121,7 @@ header li:last-of-type > a:last-of-type {
   }
 }
 
-section:first-of-type {
+main section:first-of-type {
   overflow: hidden;
   position: relative;
   height: 868px;
@@ -134,7 +135,7 @@ section:first-of-type {
   align-items: center;
 }
 
-section:first-of-type article {
+main section:first-of-type article {
   display: flex;
   width: 87%;
   flex-direction: column;
@@ -144,7 +145,7 @@ section:first-of-type article {
   margin-top: 92px;
 }
 
-section:first-of-type div {
+main section:first-of-type div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -386,6 +387,9 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 1025px;
+
+  position: relative;
 }
 
 footer section {
@@ -393,11 +397,11 @@ footer section {
   width: 87%;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-400, 32px);
+  gap: var(--spacing-400);
   flex-shrink: 0;
 }
 
-footer > section > div {
+footer section > div {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -407,7 +411,7 @@ footer > section > div {
   background: transparent;
 }
 
-footer > section > div > div {
+footer div:has(ul) {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -456,6 +460,27 @@ footer h3 {
   letter-spacing: 1.5px;
 }
 
+footer div:has(span) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-200, 16px);
+}
+
+footer span {
+  color: var(--colors-gray-700);
+}
+
+footer > span {
+  color: var(--colors-gray-200);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+footer img {
+  width: 160px;
+}
 hr {
   height: 1px;
   width: 100%;
@@ -477,6 +502,20 @@ div:last-child h2 {
 
 main section > div:last-of-type {
   background-color: var(--colors-yellow-950);
+  width: 87%;
+  height: 344px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main section > div:last-of-type > div {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-500, 40px);
 }
 
 .hidden {
