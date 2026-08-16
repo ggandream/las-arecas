@@ -75,6 +75,7 @@ nav:last-of-type {
   top: 80px;
   overflow: hidden;
   z-index: 5;
+  transition: opacity 0.25s ease;
 }
 
 header ul {
@@ -133,6 +134,10 @@ main section:first-of-type {
   flex-direction: column;
 
   align-items: center;
+
+  @media (min-width: 768px) {
+    height: 1009px;
+  }
 }
 
 main section:first-of-type article {
@@ -164,6 +169,7 @@ h1 {
   font-weight: 400;
   line-height: 100%; /* 48px */
   letter-spacing: -0.5px;
+  z-index: 1;
 }
 
 h2 {
@@ -177,7 +183,7 @@ h2 {
   font-weight: 400;
   line-height: 100%; /* 48px */
   letter-spacing: -0.5px;
-  margin: 40px 0 0;
+  margin: 0;
 }
 section:first-of-type p {
   color: var(--colors-white, #fff);
@@ -243,6 +249,7 @@ section:nth-child(2 of section) > div:first-of-type {
   display: flex;
   width: 87%;
   flex-direction: column;
+  align-items: center;
   gap: var(--spacing-1000, 80px);
 }
 
@@ -254,11 +261,19 @@ section:nth-child(2 of section) > div:first-of-type > div {
   align-self: stretch;
 }
 
+hr {
+  width: 150px;
+  height: 1px;
+  color: var(--colors-olive-400, #3d3e14);
+  margin: 0;
+}
+
 article {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-200);
+  width: 100%;
 }
 
 article h3 {
@@ -300,15 +315,21 @@ article img {
 }
 
 picture > img {
-  width: auto;
+  width: 100%;
   height: 368px;
   object-fit: cover;
-  object-position: 86px 0;
+  object-position: 0;
   aspect-ratio: 16/9;
+
+  @media (min-width: 768px) {
+    width: 152%;
+    height: 609px;
+    object-position: 0 0;
+  }
 }
 
 /* ACCORDION */
-section:last-child > div:nth-child(3) {
+section:last-child > div:nth-child(2 of div) {
   display: flex;
   width: 87%;
   flex-direction: column;
@@ -387,7 +408,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 1025px;
+  height: 1054px;
 
   position: relative;
 }
@@ -401,7 +422,7 @@ footer section {
   flex-shrink: 0;
 }
 
-footer section > div {
+footer > section > div {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -411,7 +432,7 @@ footer section > div {
   background: transparent;
 }
 
-footer div:has(ul) {
+footer div > div:has(ul) {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -424,6 +445,13 @@ footer ul {
   width: 100%;
   list-style: none;
   padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-200);
+  align-self: stretch;
+  margin: 0;
 }
 
 footer li {
@@ -458,9 +486,10 @@ footer h3 {
   font-weight: 700;
   line-height: 115%; /* 14.95px */
   letter-spacing: 1.5px;
+  margin: 0;
 }
 
-footer div:has(span) {
+footer div > div:has(span) {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -469,22 +498,16 @@ footer div:has(span) {
 
 footer span {
   color: var(--colors-gray-700);
+  z-index: 1;
 }
-
-footer > span {
-  color: var(--colors-gray-200);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 footer img {
   width: 160px;
+  z-index: 1;
 }
-hr {
+footer hr {
   height: 1px;
   width: 100%;
-  background: var(--colors-gray-200);
+  color: var(--colors-gray-200);
 }
 
 div:last-child h2 {
@@ -498,6 +521,7 @@ div:last-child h2 {
   font-weight: 400;
   line-height: 100%; /* 40px */
   letter-spacing: -0.5px;
+  z-index: 5;
 }
 
 main section > div:last-of-type {
@@ -508,6 +532,7 @@ main section > div:last-of-type {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 main section > div:last-of-type > div {
@@ -539,4 +564,18 @@ nav[data-show="false"] {
   top: -296px;
   right: 0;
   color: var(--colors-purple-500);
+}
+
+.waves-3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--colors-purple-500);
+}
+
+.waves-4 {
+  color: var(--colors-gray-200);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
