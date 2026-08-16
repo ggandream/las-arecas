@@ -369,12 +369,6 @@ summary span {
   font-size: 1.4rem;
 }
 
-summary button {
-  background: transparent;
-  border: 1px solid transparent;
-  padding: 0;
-}
-
 details > div {
   display: flex;
   flex-direction: column;
